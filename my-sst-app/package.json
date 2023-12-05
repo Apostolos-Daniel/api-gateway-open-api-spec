@@ -9,6 +9,7 @@
     "deploy": "sst deploy",
     "remove": "sst remove",
     "console": "sst console",
+    "generate-openapi-client": "sst bind \"node generateOpenApiClient.js\"",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -23,6 +24,11 @@
   ],
   "dependencies": {
     "@anatine/zod-openapi": "^2.2.1",
-    "openapi3-ts": "^4.1.2"
+    "@asteasolutions/zod-to-openapi": "^6.3.0",
+    "openapi-typescript-codegen": "^0.25.0",
+    "openapi3-ts": "^4.1.2",
+    "vitest": "^0.34.6",
+    "yaml": "^2.3.4",
+    "zod": "^3.22.4"
   }
 }

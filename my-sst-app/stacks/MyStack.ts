@@ -1,4 +1,4 @@
-import { StackContext, Api, EventBus } from "sst/constructs";
+import { StackContext, Api, EventBus, Config, Function } from "sst/constructs";
 
 export function API({ stack }: StackContext) {
   const bus = new EventBus(stack, "bus", {
@@ -7,22 +7,34 @@ export function API({ stack }: StackContext) {
     },
   });
 
-  const api = new Api(stack, "api", {
-    defaults: {
-      function: {
-        bind: [bus],
+  const openApiFunction = new Function(stack, "open-api", {
+    handler: "packages/functions/src/openApi.handler",
+  });
+
+  const openApiDocsFunction = new Function(stack, "open-api-docs", {
+    handler: "packages/functions/src/openApiDocs.handler",
+    copyFiles: [
+      {
+        from: "packages/functions/src/openApi.html",
+        to: "packages/functions/src/openApi.html",
       },
-    },
+    ],
+  });
+
+  const api = new Api(stack, "api", {
     routes: {
-      "GET /": "packages/functions/src/lambda.handler",
-      "GET /todo": "packages/functions/src/todo.list",
-      "POST /todo": "packages/functions/src/todo.create",
+      "GET /openapi.json": openApiFunction,
+      "GET /openapi.yaml": openApiFunction,
+      "GET /docs": openApiDocsFunction,
+      "GET /{appId}/customers": "packages/functions/src/customer.getCustomer", 
     },
   });
 
-  bus.subscribe("todo.created", {
-    handler: "packages/functions/src/events/todo-created.handler",
+  const httpApiUrlConfig = new Config.Parameter(stack, "HTTP_API", {
+    value: api.url,
   });
+
+  openApiFunction.bind([httpApiUrlConfig]);
 
   stack.addOutputs({
     ApiEndpoint: api.url,
