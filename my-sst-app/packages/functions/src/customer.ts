@@ -2,8 +2,6 @@
 import { GetCustomer } from '@my-sst-app/core/openApi/getCustomer';
 import { GetCustomerParams } from '@my-sst-app/core/openApi/getCustomerParams';
 import { GetCustomerQueryParams } from '@my-sst-app/core/openApi/getCustomerQueryParams';
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { randomUUID } from "crypto";
 import { openApiLambdaHttpHandler } from './utils/openApiLambdaHttpHandler';
 
 export const getCustomerImpl = openApiLambdaHttpHandler<

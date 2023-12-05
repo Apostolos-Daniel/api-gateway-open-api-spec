@@ -10,7 +10,7 @@ import { Customer } from "../types/customer";
 
 export function createOpenApiRegistry() {
   const registry = new OpenAPIRegistry();
-  const getCustomerRequestSchema = registry.register("GetCustomerRequest", GetCustomer);
+  //const getCustomerRequestSchema = registry.register("GetCustomerRequest", GetCustomer);
   const getCustomerParamsSchema = registry.register(
     "GetCustomerParams",
     GetCustomerParams
