@@ -8,18 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@anatine/zod-openapi':
-        specifier: ^2.2.1
-        version: 2.2.1(openapi3-ts@4.1.2)(zod@3.22.4)
       '@asteasolutions/zod-to-openapi':
         specifier: ^6.3.0
         version: 6.3.0(zod@3.22.4)
       openapi-typescript-codegen:
         specifier: ^0.25.0
         version: 0.25.0
-      openapi3-ts:
-        specifier: ^4.1.2
-        version: 4.1.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6
@@ -39,6 +33,9 @@ importers:
       constructs:
         specifier: 10.3.0
         version: 10.3.0
+      husky:
+        specifier: ^8.0.3
+        version: 8.0.3
       sst:
         specifier: ^2.36.6
         version: 2.36.6
@@ -94,17 +91,6 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
     dev: true
-
-  /@anatine/zod-openapi@2.2.1(openapi3-ts@4.1.2)(zod@3.22.4):
-    resolution: {integrity: sha512-tYWsCc82II3XMR8lJgg8+AHgCbfsKpgzDmcceLW1SRpqiueqYVGW5AE33W4LJTl+WJ2/mET0DWD17biFO7k/Qg==}
-    peerDependencies:
-      openapi3-ts: ^4.1.2
-      zod: ^3.20.0
-    dependencies:
-      openapi3-ts: 4.1.2
-      ts-deepmerge: 6.2.0
-      zod: 3.22.4
-    dev: false
 
   /@apidevtools/json-schema-ref-parser@9.0.9:
     resolution: {integrity: sha512-GBD2Le9w2+lVFoc4vswGI/TjkNIZSVp7+9xPf+X3uidBfWnAeUWmquteSyt0+VCrhNMWj/FTABISQrD3Z/YA+w==}
@@ -4352,6 +4338,12 @@ packages:
       toidentifier: 1.0.1
     dev: true
 
+  /husky@8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -5792,11 +5784,6 @@ packages:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
     hasBin: true
     dev: true
-
-  /ts-deepmerge@6.2.0:
-    resolution: {integrity: sha512-2qxI/FZVDPbzh63GwWIZYE7daWKtwXZYuyc8YNq0iTmMUwn4mL0jRLsp6hfFlgbdRSR4x2ppe+E86FnvEpN7Nw==}
-    engines: {node: '>=14.13.1'}
-    dev: false
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}

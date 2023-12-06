@@ -34,6 +34,7 @@ export class DefaultApi {
       },
       errors: {
         400: `Validation errors`,
+        500: `Server errors`,
       },
     });
   }

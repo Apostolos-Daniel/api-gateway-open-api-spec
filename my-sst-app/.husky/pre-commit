@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+cd my-sst-app
+pnpm generate-openapi-client
+cd packages/core
+pnpm test:run

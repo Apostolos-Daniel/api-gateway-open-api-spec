@@ -12,7 +12,6 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { GetCustomerParams } from './models/GetCustomerParams';
 export type { GetCustomerQueryParams } from './models/GetCustomerQueryParams';
-export type { GetCustomerRequest } from './models/GetCustomerRequest';
 export type { getCustomerResponse } from './models/getCustomerResponse';
 export type { ValidationErrors } from './models/ValidationErrors';
 
